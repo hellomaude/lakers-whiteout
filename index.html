@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Lakers Whiteout Index — Optics Audit</title>
+  <meta name="description" content="A Lakers fan-satire optics audit of the unusually white projected core, Marcus Smart loss, and race discourse around the post-LeBron Luka roster." />
+  <style>
+    :root{
+      --purple:#552583; --purple2:#2b1247; --gold:#FDB927; --cream:#fff6db;
+      --ink:#15091f; --muted:#6e5b79; --card:#fffaf0; --line:rgba(255,255,255,.18);
+      --red:#ff5d5d; --green:#33d69f; --blue:#7dc8ff; --shadow:0 30px 100px rgba(16,5,26,.38); --r:28px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth}
+    body{min-height:100vh;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:white;background:radial-gradient(circle at 12% 6%,rgba(253,185,39,.42),transparent 30%),radial-gradient(circle at 82% 10%,rgba(255,255,255,.2),transparent 24%),linear-gradient(135deg,#1b062b 0%,#552583 45%,#13051f 100%);overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.14;background-image:linear-gradient(rgba(255,255,255,.2) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.2) 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(to bottom,black,transparent 86%)}
+    a{color:inherit}.wrap{width:min(1200px,calc(100% - 34px));margin:0 auto;position:relative;z-index:1}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:24px 0}.brand{display:flex;gap:13px;align-items:center;font-weight:1000;letter-spacing:-.04em}.logo{width:46px;height:46px;border-radius:50%;background:conic-gradient(from 30deg,var(--gold),#fff4bc,var(--gold),#7d45b3,var(--gold));box-shadow:0 0 0 5px rgba(253,185,39,.14),0 18px 40px rgba(0,0,0,.28)}
+    .pillbar{display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end}.pill{border:1px solid var(--line);background:rgba(255,255,255,.1);padding:9px 13px;border-radius:999px;text-decoration:none;color:#f3defe;font-size:13px;backdrop-filter:blur(16px)}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;padding:40px 0 22px}.hero-card,.glass{border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.18),rgba(255,255,255,.06));border-radius:var(--r);box-shadow:var(--shadow);backdrop-filter:blur(24px);overflow:hidden}.hero-card{padding:46px;position:relative}.hero-card:after{content:"LA";position:absolute;right:-32px;bottom:-62px;font-size:205px;font-weight:1000;line-height:.8;color:rgba(253,185,39,.09);letter-spacing:-.13em}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(253,185,39,.48);color:#fff3c4;background:rgba(253,185,39,.13);padding:8px 12px;border-radius:999px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.12em;margin-bottom:20px}
+    h1{font-size:clamp(48px,7.6vw,105px);line-height:.86;letter-spacing:-.08em;max-width:900px;position:relative;z-index:1}.gold{color:var(--gold);text-shadow:0 7px 0 rgba(0,0,0,.16)}.sub{font-size:clamp(17px,2vw,23px);line-height:1.45;color:#f0ddff;max-width:780px;margin-top:22px;position:relative;z-index:1}.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;position:relative;z-index:1}.btn{border:0;border-radius:999px;padding:13px 18px;font-weight:950;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:.18s}.btn:hover{transform:translateY(-2px);filter:brightness(1.04)}.btn.primary{background:var(--gold);color:#231007}.btn.secondary{background:rgba(255,255,255,.12);border:1px solid var(--line);color:white}
+    .score{display:grid;gap:14px}.stat{background:var(--card);color:var(--ink);border-radius:var(--r);padding:25px;box-shadow:0 24px 70px rgba(0,0,0,.24);overflow:hidden}.stat.dark{background:linear-gradient(145deg,#15091f,#37105d);color:white;border:1px solid var(--line)}.num{font-size:82px;line-height:.78;letter-spacing:-.08em;font-weight:1000}.num small{font-size:30px;color:var(--gold)}.label{font-weight:1000;font-size:18px;letter-spacing:-.03em;margin-top:12px}.cap{color:var(--muted);line-height:1.36;margin-top:7px}.dark .cap{color:#d0b8df}
+    section{padding:22px 0}.panel{background:rgba(255,255,255,.95);color:var(--ink);border-radius:var(--r);box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.55);overflow:hidden}.inner{padding:30px}.title{font-size:clamp(31px,4.2vw,58px);line-height:.94;letter-spacing:-.065em;margin-bottom:12px}.copy{font-size:17px;line-height:1.55;color:#5d4d68;max-width:880px}.mini{font-size:13px;color:#7b6b86;line-height:1.45}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.mt{margin-top:22px}
+    .lineup{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:24px}.player{min-height:250px;border-radius:24px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;color:white;background:linear-gradient(160deg,#21102f,#5b2790);border:1px solid rgba(85,37,131,.18)}.player.white{background:linear-gradient(160deg,#fff8db 0%,#f8d276 50%,#f7f0ff 100%);color:#1d1028}.player.alt{background:linear-gradient(160deg,#1e0d30,#2b1739)}.player:after{content:attr(data-pos);position:absolute;right:10px;bottom:-14px;font-size:86px;font-weight:1000;letter-spacing:-.12em;opacity:.13}.tag{align-self:flex-start;padding:7px 10px;border-radius:999px;background:rgba(85,37,131,.13);color:#51217e;font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.08em}.player:not(.white) .tag{background:rgba(253,185,39,.18);color:#fff1c4}.name{font-size:26px;line-height:.95;letter-spacing:-.05em;font-weight:1000;position:relative;z-index:1}.role{font-size:13px;line-height:1.35;opacity:.78;margin-top:8px;position:relative;z-index:1}
+    .switch{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}.chip{border:1px solid #eadcf6;padding:9px 11px;border-radius:999px;background:white;cursor:pointer;font-weight:850}.chip.active{background:var(--purple);color:white;border-color:var(--purple)}.meter{background:#180821;color:white;border-radius:24px;padding:22px}.bar{height:16px;background:rgba(255,255,255,.13);border-radius:999px;overflow:hidden;margin-top:16px}.fill{height:100%;width:80%;background:linear-gradient(90deg,var(--gold),#fff1a3);border-radius:999px;box-shadow:0 0 30px rgba(253,185,39,.6)}
+    .card{border:1px solid #eadcf6;border-radius:22px;padding:18px;background:#fff;min-height:164px}.card b{display:block;font-size:17px;margin-bottom:8px}.card p{color:#685873;line-height:1.43}.card.red{border-color:#ffd0d0;background:#fff7f7}.card.gold{border-color:#f7dd8b;background:#fffaf0}.card.green{border-color:#c7f3df;background:#f6fffa}.badge{display:inline-flex;padding:6px 9px;border-radius:999px;font-size:11px;text-transform:uppercase;letter-spacing:.09em;font-weight:1000;margin-bottom:10px}.badge.red{background:#ffe2e2;color:#8d1616}.badge.gold{background:#fff1bd;color:#674b00}.badge.green{background:#dffced;color:#075f3d}.badge.purple{background:#efe1ff;color:#552583}
+    .timeline{display:grid;gap:12px;margin-top:22px}.event{display:grid;grid-template-columns:120px 1fr;gap:16px;padding:16px;border-radius:20px;background:#fff;border:1px solid #eadcf6}.date{font-weight:1000;color:var(--purple);letter-spacing:-.03em}.event h3{font-size:18px;letter-spacing:-.03em;margin-bottom:5px}.event p{color:#665570;line-height:1.45}
+    .reddit{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}.rumor{background:linear-gradient(145deg,#1b082a,#4f1f7d);color:white;border-radius:26px;padding:26px}.temp{font-size:64px;font-weight:1000;letter-spacing:-.07em;line-height:.9;color:var(--gold);margin-bottom:14px}.receipt{display:block;text-decoration:none;border:1px solid #eadcf6;background:#fff;color:#1e0f2b;padding:15px;border-radius:18px;transition:.18s;margin-bottom:10px}.receipt:hover{transform:translateY(-2px);border-color:var(--purple)}.src{font-size:12px;color:#8d7a99;font-weight:900;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}.quote{font-size:17px;line-height:1.35;font-weight:850;letter-spacing:-.02em}.note{margin-top:18px;padding:16px;border-left:5px solid var(--gold);background:#fff7dd;color:#432d00;border-radius:16px;line-height:1.45}.footer{padding:34px 0 54px;color:#dcc4ef;font-size:14px;line-height:1.5}
+    @media(max-width:950px){.hero,.grid2,.reddit{grid-template-columns:1fr}.lineup{grid-template-columns:1fr 1fr}.grid3,.grid4{grid-template-columns:1fr 1fr}.nav{align-items:flex-start;flex-direction:column}.player{min-height:220px}.event{grid-template-columns:1fr}}
+    @media(max-width:580px){.lineup,.grid3,.grid4{grid-template-columns:1fr}.hero-card,.inner{padding:24px}.num{font-size:64px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <div class="brand"><div class="logo"></div><span>The Lakers Whiteout Index</span></div>
+      <div class="pillbar"><a class="pill" href="#audit">Optics audit</a><a class="pill" href="#smart">Smart problem</a><a class="pill" href="#history">Precedent</a><a class="pill" href="#receipts">Receipts</a></div>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-card">
+        <div class="eyebrow">Lakers fan concern • evidence-first satire</div>
+        <h1>This roster is <span class="gold">too weird</span> to ignore.</h1>
+        <p class="sub">A Lakers team — the franchise of Magic, Kareem, Kobe, Shaq, LeBron, AD — may now be built around <b>Luka Dončić, Austin Reaves, and Walker Kessler</b>, with a plausible path to four white starters. That does not prove Rob Pelinka is racist. It absolutely creates sketchy optics worth auditing.</p>
+        <div class="cta"><a class="btn primary" href="#audit">Show the sketchy optics</a><a class="btn secondary" href="#verdict">Read the clean verdict</a></div>
+      </div>
+      <aside class="score">
+        <div class="stat"><div class="num">3<small>/3</small></div><div class="label">Core pieces are white</div><div class="cap">Luka = engine. Reaves = secondary creator. Kessler = defensive anchor / Luka-requested center archetype.</div></div>
+        <div class="stat dark"><div class="num">4<small>/5</small></div><div class="label">Plausible starter optics</div><div class="cap">Luka, Reaves, Mamu, Kessler. If LaRavia starts too, the bit becomes a national segment.</div></div>
+        <div class="stat"><div class="num">$13M</div><div class="label">Smart leaves for Houston</div><div class="cap">A two-year deal for the exact defensive culture guard Lakers fans wanted back.</div></div>
+      </aside>
+    </header>
+
+    <section id="audit">
+      <div class="panel"><div class="inner">
+        <h2 class="title">The Optics Audit: why this feels sketchy.</h2>
+        <p class="copy">This is not “white players bad.” Luka is elite. Reaves is good. Kessler fits. The issue is pattern recognition: when every high-leverage roster choice seems to tilt the same way while a needed Black defensive leader walks, fans are allowed to ask what is going on.</p>
+        <div class="grid4 mt">
+          <div class="card red"><span class="badge red">Optic 1</span><b>The three main guys</b><p>The apparent top-three hierarchy is Luka, Reaves, Kessler. That alone is unusual in the modern NBA and extra strange for the Lakers brand.</p></div>
+          <div class="card red"><span class="badge red">Optic 2</span><b>Four-starter pathway</b><p>Mamu as projected PF makes four white starters plausible without even forcing the lineup.</p></div>
+          <div class="card red"><span class="badge red">Optic 3</span><b>All-white lineup discourse</b><p>Reddit is already asking whether this is an all-white modern-era starting five scenario if LaRavia starts.</p></div>
+          <div class="card red"><span class="badge red">Optic 4</span><b>Smart was the antidote</b><p>Marcus Smart was the exact toughness/defense/culture piece — and he left for a very gettable-looking deal.</p></div>
+          <div class="card gold"><span class="badge gold">Optic 5</span><b>Lakers identity clash</b><p>This is the Lakers. A race conversation hits differently when the franchise’s mythology is Black superstar greatness.</p></div>
+          <div class="card gold"><span class="badge gold">Optic 6</span><b>Media noticed instantly</b><p>USA Today covered the race debate, “Snowtime” jokes, Stephen A., and Kenyon Martin questioning four white starters.</p></div>
+          <div class="card gold"><span class="badge gold">Optic 7</span><b>Luka-first explanation</b><p>The innocent explanation is also the sketchy-looking one: over-indexing on Luka spacing can accidentally launder odd roster optics.</p></div>
+          <div class="card green"><span class="badge green">Guardrail</span><b>Intent is not proven</b><p>Sketchy optics are not proof. The site should raise the concern without pretending we know Pelinka’s intent.</p></div>
+        </div>
+      </div></div>
+    </section>
+
+    <section id="lineup">
+      <div class="panel"><div class="inner">
+        <h2 class="title">The lineup toggle: responsible weird vs. nuclear weird.</h2>
+        <p class="copy">The responsible version starts Quentin Grimes at SF and still gives you four white starters if Mamu starts. The maximum-chaos version starts Jake LaRavia and produces a clean 5-for-5.</p>
+        <div class="lineup">
+          <div class="player white" data-pos="PG"><span class="tag">core</span><div><div class="name">Luka Dončić</div><div class="role">The franchise engine and the gravitational force behind the build.</div></div></div>
+          <div class="player white" data-pos="SG"><span class="tag">core</span><div><div class="name">Austin Reaves</div><div class="role">Creator, scorer, fan favorite, new-era continuity piece.</div></div></div>
+          <div class="player alt" data-pos="SF"><span class="tag">variable</span><div><div class="name" id="sfName">Quentin Grimes</div><div class="role" id="sfRole">The sane perimeter-defense version. Still leaves the optics loud.</div></div></div>
+          <div class="player white" data-pos="PF"><span class="tag">projected</span><div><div class="name">Sandro Mamukelashvili</div><div class="role">Stretch big. The fourth white starter in the clean version of the concern.</div></div></div>
+          <div class="player white" data-pos="C"><span class="tag">core</span><div><div class="name">Walker Kessler</div><div class="role">Rim protector, rebounder, Luka-fitting center archetype.</div></div></div>
+        </div>
+        <div class="switch"><button class="chip active" onclick="setSF('grimes', this)">Responsible: Grimes at SF</button><button class="chip" onclick="setSF('laravia', this)">Nuclear: LaRavia at SF</button></div>
+        <div class="grid2 mt"><div class="meter"><h3>White Starter Meter</h3><div class="bar"><div class="fill" id="whiteFill"></div></div><p id="whiteText" style="margin-top:12px;color:#e7d2f4">4 of 5: already very strange for a serious modern Lakers roster.</p></div><div class="meter"><h3>Evidence Meter</h3><div class="bar"><div class="fill" style="width:46%;background:linear-gradient(90deg,#fff,#b996ff)"></div></div><p style="margin-top:12px;color:#e7d2f4">Enough to justify fan concern and a pattern audit. Not enough to call Pelinka racist as a fact.</p></div></div>
+      </div></div>
+    </section>
+
+    <section id="smart">
+      <div class="panel"><div class="inner">
+        <h2 class="title">The Marcus Smart problem is the loudest part.</h2>
+        <p class="copy">Smart is not some random sentimental loss. ESPN says he declined a $5.4M Lakers player option, then took two years / $13M with Houston. ESPN also says he led the Lakers in plus-minus last season, started 54 games, was recruited by Luka, and ranked third in playoff steals per game. NBA.com called out his first-round impact against Houston. That is exactly the kind of player this roster still needs.</p>
+        <div class="grid3 mt">
+          <div class="card red"><span class="badge red">Sketchy</span><b>He fit the need</b><p>Point-of-attack defense, toughness, steals, veteran playoff edge — the precise complement to Luka/Reaves.</p></div>
+          <div class="card red"><span class="badge red">Sketchy</span><b>The number was not insane</b><p>Two years / $13M is not a superstar price. From a fan POV, losing him after spending elsewhere looks suspiciously avoidable.</p></div>
+          <div class="card green"><span class="badge green">Caveat</span><b>He chose Houston too</b><p>Reports cite opportunity and Ime Udoka. Free agents have agency. This can be a miss without being racism.</p></div>
+        </div>
+      </div></div>
+    </section>
+
+    <section id="history">
+      <div class="panel"><div class="inner">
+        <h2 class="title">How unprecedented is it?</h2>
+        <p class="copy">Three white starters has precedent. Four in a serious modern lineup is rare enough that people immediately ask for historical comps. Five would be near-mythical in the post-1990 NBA. The specific Lakers angle — three main guys white after LeBron, with Smart walking — is the historically bizarre part.</p>
+        <div class="grid3 mt">
+          <div class="card"><span class="badge purple">Known comps</span><b>1986 Celtics</b><p>Bird, McHale, Ainge are the classic three-white-starter title example.</p></div>
+          <div class="card"><span class="badge purple">Known comps</span><b>Late-90s Jazz</b><p>Stockton, Hornacek, and Foster/Keefe/Ostertag variants gave Finals-level precedent.</p></div>
+          <div class="card"><span class="badge purple">Modern-ish</span><b>Luka Mavs</b><p>Luka/Porziņģis/Kleber or Powell lineups show the three-white-starter Luka ecosystem is not new.</p></div>
+        </div>
+      </div></div>
+    </section>
+
+    <section>
+      <div class="panel"><div class="inner">
+        <h2 class="title">Timeline of the optics snowball.</h2>
+        <div class="timeline">
+          <div class="event"><div class="date">Step 1</div><div><h3>Lakers pivot to Luka era</h3><p>Post-LeBron framing makes Luka the organizing principle.</p></div></div>
+          <div class="event"><div class="date">Step 2</div><div><h3>Kessler becomes the big swing</h3><p>Reports say the Lakers pay real draft capital and commit major money to the white rim-protecting center Luka wanted.</p></div></div>
+          <div class="event"><div class="date">Step 3</div><div><h3>Mamu joins the projected frontcourt</h3><p>Another white frontcourt piece moves the projected starter count from notable to loud.</p></div></div>
+          <div class="event"><div class="date">Step 4</div><div><h3>Smart leaves</h3><p>The Black defensive-culture guard who fit the roster exits for Houston, making the optics feel less accidental to fans.</p></div></div>
+          <div class="event"><div class="date">Step 5</div><div><h3>Reddit + mainstream media notice</h3><p>The discourse becomes “Snowtime,” “white guy squad,” “all-white lineup,” and whether this can win.</p></div></div>
+        </div>
+      </div></div>
+    </section>
+
+    <section id="receipts">
+      <div class="panel"><div class="inner reddit">
+        <div class="rumor"><div class="eyebrow">Receipts board</div><h2 class="title" style="color:white">Sketchy optics, not a conviction.</h2><div class="temp">Concern: justified. Claim: unproven.</div><p style="color:#e9d8f6;line-height:1.55">The page should make the uncomfortable fan case: this is strange, historic-looking, and worth questioning. It should not state that Pelinka is racist unless real evidence emerges. Current evidence supports: weird pattern, debatable priorities, bad optics, Smart miss, Luka-centric roster math.</p><div class="note"><b>Clean framing:</b> “I’m worried race is accidentally becoming part of how my favorite team is being built. I don’t want that. I want the Lakers to win with the best, toughest, most balanced roster.”</div></div>
+        <div>
+          <a class="receipt" href="https://www.usatoday.com/story/sports/nba/2026/07/01/lakers-starting-lineup-debate-white-players-race/90776044007/" target="_blank"><div class="src">USA Today</div><div class="quote">Mainstream article: Lakers projected lineup sparked debate over race, “Snowtime,” Stephen A., and Kenyon Martin.</div></a>
+          <a class="receipt" href="https://www.espn.com/nba/story/_/id/49235334/sources-marcus-smart-agrees-2-year-13m-deal-rockets" target="_blank"><div class="src">ESPN</div><div class="quote">Smart to Rockets: two years / $13M after declining Lakers option; led Lakers in plus-minus, started 54 games.</div></a>
+          <a class="receipt" href="https://www.nba.com/news/marcus-smart-free-agency-2026" target="_blank"><div class="src">NBA.com</div><div class="quote">Smart was strong in the Lakers-Rockets series: 14.7 PPG, 5.5 APG, 2.7 SPG.</div></a>
+          <a class="receipt" href="https://www.nba.com/news/sandro-mamukelashvili-collin-sexton-quentin-grimes-free-agency-2026" target="_blank"><div class="src">NBA.com</div><div class="quote">Lakers agreed to deals with Sandro Mamukelashvili, Collin Sexton, and Quentin Grimes after Kessler trade.</div></a>
+          <a class="receipt" href="https://www.reddit.com/r/nba/comments/1ukq5m5/white_guy_squad/" target="_blank"><div class="src">Reddit</div><div class="quote">“With the signing of Walker Kessler the Lakers 3 best players are white.”</div></a>
+          <a class="receipt" href="https://www.reddit.com/r/NBATalk/comments/1ukz7ql/lakers_gonna_role_w_an_all_white_starting_lineup/" target="_blank"><div class="src">Reddit</div><div class="quote">“Lakers gonna roll w an All White starting lineup…”</div></a>
+        </div>
+      </div></div>
+    </section>
+
+    <section id="verdict">
+      <div class="panel"><div class="inner">
+        <h2 class="title">Final fan verdict.</h2>
+        <div class="grid3 mt">
+          <div class="card green"><span class="badge green">Fair</span><b>Worry about the optics</b><p>Yes. It is your favorite team and the pattern is loud enough to deserve scrutiny.</p></div>
+          <div class="card gold"><span class="badge gold">Fair</span><b>Question the priorities</b><p>Yes. Losing Smart while building a softer-looking roster is a basketball and culture concern.</p></div>
+          <div class="card red"><span class="badge red">Not proven</span><b>Call Pelinka racist as fact</b><p>No. That requires evidence we do not have. The site can say “sketchy” without overclaiming.</p></div>
+        </div>
+      </div></div>
+    </section>
+
+    <footer class="footer">Built as Lakers fan satire and evidence-backed roster discourse. It argues the optics are historically bizarre and worth questioning; it does not allege intentional racial bias without evidence. Not affiliated with the Lakers, NBA, Reddit, Rob Pelinka, or the Caucasus delegation. Last checked: July 2026.</footer>
+  </div>
+  <script>
+    function setSF(mode, button){
+      document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active')); if(button) button.classList.add('active');
+      const sf=document.querySelector('[data-pos="SF"]'), name=document.getElementById('sfName'), role=document.getElementById('sfRole'), fill=document.getElementById('whiteFill'), text=document.getElementById('whiteText');
+      if(mode==='laravia'){sf.classList.add('white');sf.classList.remove('alt');name.textContent='Jake LaRavia';role.textContent='Maximum-chaos version: five white starters and a discourse firestorm.';fill.style.width='100%';text.textContent='5 of 5: modern-era nuclear scenario. The bit becomes the story.';}
+      else{sf.classList.remove('white');sf.classList.add('alt');name.textContent='Quentin Grimes';role.textContent='The sane perimeter-defense version. Still leaves the optics loud.';fill.style.width='80%';text.textContent='4 of 5: already very strange for a serious modern Lakers roster.';}
+    }
+  </script>
+</body>
+</html>
